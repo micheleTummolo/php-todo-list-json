@@ -16,14 +16,25 @@
     <title>Todo list</title>
     <link rel="shortcut icon" href="./img/icon-todo.png" type="image/x-icon">
 </head>
-<body>
+<body class="bg-primary-subtle">
     <div id="app">
-         <div class="container"> 
+         <div class="container w-50"> 
+            <div class="row mt-5">
+                <div class="col">
+                    <h1>Todo list</h1>
+                </div>
+            </div>
             <div class="row">
                 <div class="col">
-                    <ul>
-                        <li v-for="(item) in list">{{item}}</li>
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="(item) in list">{{item}}</li>
                     </ul>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col d-flex">
+                    <input class="form-control me-2" type="text" v-model="text">
+                    <button class="btn btn-primary" @click="add">Aggiungi</button>
                 </div>
             </div>
          </div>
